@@ -26,6 +26,12 @@ const styles = StyleSheet.create({
     buttonCont: {
       marginTop: 10,
       marginBottom: 10
+    },
+
+    responseText: {
+      marginTop: 30,
+      color: 'white',
+      
     }
 
 

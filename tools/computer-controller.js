@@ -5,24 +5,38 @@ export const turnOn = (callback) => {
 
     // console.log(comp_info);
 
-    fetch(`http://${server_info.ip}:${server_info.port}/api/toggle/turn-on`, {
+    fetch(`http://${server_info.ip}:${server_info.port}/api/toggle/desktop`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-            mac: comp_info.mac
+            action: "on"
         }),
     }).then((res) => {
-        if(!!res) console.log(`Sent turn on request for ${comp_info.mac}, got status ${res.status}`);
-        callback(`Sent turn on request for ${comp_info.mac}, got status ${res.status}`);
+        if(!!res) {
+            callback(`Sent turn on signal, got status ${res.status}`);
+        }
     }).catch((err) => {
-        console.log("Send Error: " + err);
-        callback(`Sent turn on request for ${comp_info.mac}, got erro ${err}`);
+        callback(`Sent turn on signal, got error ${err}`);
     });
     
 }
 
-export const turnOff = () => {
+export const turnOff = (callback) => {
     
+    fetch(`http://${server_info.ip}:${server_info.port}/api/toggle/desktop`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            action: "off"
+        }),
+    }).then((res) => {
+        if(!!res) callback(`Sent turn off signal, got status ${res.status}`);
+    }).catch((err) => {
+        callback(`Sent turn off signal, got error ${err}`);
+    });
+
 }

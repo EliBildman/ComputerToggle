@@ -9,6 +9,7 @@ export default function App() {
   const [ displayText, setDisplayText ] = React.useState('');
 
   const changeDisplay = (text) => {
+    console.log(text);
     setDisplayText(text);
     setTimeout(() => { setDisplayText('') }, 3000);
   }
@@ -31,7 +32,7 @@ export default function App() {
         containerStyle = { styles.buttonCont }
         title = 'OFF'
         type = 'outline'
-        onPress = { () => {console.log('off')} }
+        onPress = { () => { turnOff(changeDisplay) } }
       />
 
 

@@ -36,8 +36,7 @@ export default function App() {
 
 
       <Text
-        style = {styles.responseText}
-      >
+        style = {styles.responseText}>
         { displayText }
       </Text>
 

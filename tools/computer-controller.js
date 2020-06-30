@@ -1,4 +1,3 @@
-import comp_info from '../data/computer-info.json'
 import server_info from '../data/server-info.json'
 
 export const turnOn = (callback) => {

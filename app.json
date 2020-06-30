@@ -23,7 +23,7 @@
     ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.yourcompany.yourappname",
+      "bundleIdentifier": "com.ManCanStudios.ComputerToggle",
       "buildNumber": "1.0.0"
     }
   }
